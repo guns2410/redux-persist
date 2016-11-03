@@ -60,6 +60,10 @@ function defaultStateReconciler (state, inboundState, reducedState, log) {
     // if reducer modifies substate, skip auto rehydration
     if (state[key] !== reducedState[key]) {
       if (log) console.log('redux-persist/autoRehydrate: sub state for key `%s` modified, skipping autoRehydrate.', key)
+      console.log(state[key])
+      console.log(reducedState[key])
+      console.log(state)
+      console.log(reducedState)
       newState[key] = reducedState[key]
       return
     }
